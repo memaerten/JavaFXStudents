@@ -1,6 +1,7 @@
 package application;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.time.ZoneId;
 import java.util.Date;
@@ -8,6 +9,7 @@ import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -48,10 +50,12 @@ public class AddController extends MonController implements Initializable {
 	}
 
 	@FXML
-	private void add(ActionEvent e) {
+	private void add(ActionEvent e) throws IOException {
 		Date d = Date.from(dateDeNaissance.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
 
 		service.ajouterEtudiant(new Student(nomTextField.getText(), prenomTextField.getText(),"", d, phototextfield.getText()));
+		AnchorPane addStudentPane = FXMLLoader.load(getClass().getResource("Scene.fxml"));
+		pane.getChildren().setAll(addStudentPane);
 		
 	}
 
