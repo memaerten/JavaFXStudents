@@ -36,7 +36,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TableView fx:id="table" layoutX="23.0" layoutY="46.0" onMouseClicked="#infoStudent" prefHeight="536.0" prefWidth="861.0">
+      <TableView fx:id="table" layoutX="23.0" layoutY="46.0" onMouseClicked="#infoStudent" prefHeight="494.0" prefWidth="861.0">
         <columns>
           <TableColumn fx:id="idStudentColumn" prefWidth="161.0" text="ID" />
           <TableColumn fx:id="nomColumn" prefWidth="201.0" text="Nom" />
@@ -44,5 +44,6 @@
             <TableColumn fx:id="dateColumn" prefWidth="241.0" text="Date de naissance" />
         </columns>
       </TableView>
+      <Button fx:id="actualiser" layoutX="401.0" layoutY="555.0" mnemonicParsing="false" onAction="#actualise" text="Button" />
    </children>
 </AnchorPane>

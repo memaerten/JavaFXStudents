@@ -5,8 +5,10 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -59,12 +61,19 @@ public class InfoStudentController extends MonController implements Initializabl
 	
 	boolean b = false;
 	
+	static List<Student> liste;
+	
+	public List<Student> getListe() {
+		return liste;
+	}
+
+	public void setListe(List<Student> liste) {
+		InfoStudentController.liste = liste;
+	}
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		s = MonController.getStudent();
-		//Student student = this.table.getSelectionModel().getSelectedItem();
-		//System.out.println(s);
-		//nomTextField.setText(this.table.getSelectionModel().getSelectedItem().getNom());
 		nomTextField.setEditable(false);
 		prenomTextField.setEditable(false);
 		dateDeNaissance.getEditor().setEditable(false);
@@ -137,9 +146,14 @@ public class InfoStudentController extends MonController implements Initializabl
 		service.modifierEtudiant(s);
 		
 		 Stage stage = (Stage) update.getScene().getWindow();
-		    stage.hide();
-		
-		service.listEtudiant();
+		    stage.close();
+		    
+		    
+		    //((ObservableList<Student>) service.listEtudiant());
+		    
+		   
+		    
+	
 	}
 
 }
