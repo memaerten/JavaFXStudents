@@ -92,11 +92,6 @@ public class MonController implements Initializable {
 	}
 
 	@FXML
-	private void fileChoose(ActionEvent e) {
-		System.out.println("Choose a file");
-	}
-
-	@FXML
 	private void about(ActionEvent e) {
 		System.out.println("About");
 	}
