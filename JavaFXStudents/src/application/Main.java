@@ -25,5 +25,3 @@ public class Main extends Application {
 		launch(args);
 	}
 }
-
-//fenêtre menu file avec dedans exit avec autre menu étudiant ajouter étudiant icône separator liste étudiants menu help log4j

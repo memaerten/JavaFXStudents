@@ -3,6 +3,7 @@ package application;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.application.Platform;
@@ -45,15 +46,30 @@ public class MonController implements Initializable {
 	@FXML TableColumn<Student, Date> dateColumn = new TableColumn<Student, Date>("Date de naissance");
 
 	@FXML Button photoButton = new Button("Parcourir...");
+	
+	@FXML
+	private Button actualiser = new Button("Button");
 
 	EtudiantService service = new EtudiantService();
 	
 	private static Student s;
+	
+	public List<Student> getListe() {
+		return liste;
+	}
+
+	public void setListe(List<Student> liste) {
+		this.liste = liste;
+	}
+
+	private List<Student> liste;
+
 
 	private ObservableList<Student> liste(){
+		liste = service.listEtudiant();
 		ObservableList<Student> characters = FXCollections.observableArrayList();
-		for (int i = 0 ; i < service.listEtudiant().size(); i++) {
-			characters.add(service.listEtudiant().get(i));
+		for (int i = 0 ; i < liste.size(); i++) {
+			characters.add(liste.get(i));
 		}
 		System.out.println(characters);
 		return characters;
@@ -92,11 +108,6 @@ public class MonController implements Initializable {
 	}
 
 	@FXML
-	private void fileChoose(ActionEvent e) {
-		System.out.println("Choose a file");
-	}
-
-	@FXML
 	private void about(ActionEvent e) {
 		System.out.println("About");
 	}
@@ -119,6 +130,12 @@ public class MonController implements Initializable {
 				error.printStackTrace();
 			}
 	}
+	
+	@FXML
+	public void actualise(ActionEvent e) {
+		table.setItems(liste());
+		//service.listEtudiant();
+	}
 
 	public static void setEtudiant(Student s) {
 		MonController.s = s;
@@ -126,11 +143,10 @@ public class MonController implements Initializable {
 
 	public static Student getStudent() {
 		return s;
-	} 
+	}
 
 
 
 
 }
-//CDA-59013-S07-MAERTEN-MELISSA
 

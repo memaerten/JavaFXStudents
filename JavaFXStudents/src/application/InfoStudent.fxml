@@ -21,7 +21,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../Downloads/add-icon.png" />
+                              <Image url="@../add-icon.png" />
                            </image>
                         </ImageView>
                      </graphic></MenuItem>
@@ -49,7 +49,7 @@
       <DatePicker fx:id="dateDeNaissance" layoutX="206.0" layoutY="248.0" />
       <Button fx:id="modify" layoutX="283.0" layoutY="418.0" mnemonicParsing="false" onAction="#modifyStudent" text="Modifier" />
       <Label layoutX="612.0" layoutY="112.0" text="Photo" />
-      <ImageView fitHeight="197.0" fitWidth="200.0" layoutX="552.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="photoStudentPicture" fitHeight="197.0" fitWidth="200.0" layoutX="552.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="photolabel" layoutX="145.0" layoutY="300.0" text="Photo" />
       <TextField fx:id="phototextfield" layoutX="206.0" layoutY="295.0" />
       <Button fx:id="photobutton" layoutX="392.0" layoutY="295.0" mnemonicParsing="false" onAction="#fileChoose" text="Parcourir..." />
