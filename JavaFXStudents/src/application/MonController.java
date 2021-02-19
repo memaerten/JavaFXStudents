@@ -23,6 +23,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Student;
 import service.EtudiantService;
@@ -120,6 +121,8 @@ public class MonController implements Initializable {
 				System.out.println(s);
 				root = FXMLLoader.load(getClass().getClassLoader().getResource("application/InfoStudent.fxml"));
 				Stage stage = new Stage();
+				stage.initModality(Modality.WINDOW_MODAL);
+				stage.initOwner(pane.getScene().getWindow());
 				stage.setTitle("My New Stage Title");
 				stage.setScene(new Scene(root));
 				stage.show();
