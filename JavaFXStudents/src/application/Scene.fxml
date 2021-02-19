@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.input.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
@@ -12,7 +13,10 @@
         <menus>
           <Menu fx:id="menu1" mnemonicParsing="false" text="Fichier">
             <items>
-              <MenuItem fx:id="menu11" mnemonicParsing="false" onAction="#menuclose" text="Fermer" />
+              <MenuItem fx:id="menu11" mnemonicParsing="false" onAction="#menuclose" text="Fermer">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="F4" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
             </items>
           </Menu>
           <Menu fx:id="menu2" mnemonicParsing="false" text="Etudiants">
