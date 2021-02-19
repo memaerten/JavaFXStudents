@@ -57,6 +57,8 @@ public class InfoStudentController extends MonController implements Initializabl
 	
 	private Student s;
 	
+	boolean b = false;
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		s = MonController.getStudent();
@@ -87,6 +89,8 @@ public class InfoStudentController extends MonController implements Initializabl
 	
 	@FXML
 	public void modifyStudent(ActionEvent e) {
+		if (b == false) {
+			b = true;
 		modify.setText("Annuler");
 		update.setVisible(true);
 		dateDeNaissance.getEditor().setEditable(true);
@@ -95,6 +99,17 @@ public class InfoStudentController extends MonController implements Initializabl
 		photolabel.setVisible(true);
 		nomTextField.setEditable(true);
 		prenomTextField.setEditable(true);
+		} else {
+			b = false;
+			modify.setText("Modifier");
+			update.setVisible(false);
+			dateDeNaissance.getEditor().setEditable(false);
+			photobutton.setVisible(false);
+			phototextfield.setVisible(false);
+			photolabel.setVisible(false);
+			nomTextField.setEditable(false);
+			prenomTextField.setEditable(false);
+		}
 		
 	}
 	
