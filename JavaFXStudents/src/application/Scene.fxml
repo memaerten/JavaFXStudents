@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MonController">
+   <children>
+      <MenuBar fx:id="menubar" layoutY="-2.0" prefHeight="32.0" prefWidth="900.0">
+        <menus>
+          <Menu fx:id="menu1" mnemonicParsing="false" text="Fichier">
+            <items>
+              <MenuItem fx:id="menu11" mnemonicParsing="false" onAction="#menuclose" text="Fermer" />
+            </items>
+          </Menu>
+          <Menu fx:id="menu2" mnemonicParsing="false" text="Etudiants">
+            <items>
+              <MenuItem fx:id="addmenu" mnemonicParsing="false" onAction="#addStudent" text="Ajouter">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Downloads/add-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="listmenu" mnemonicParsing="false" onAction="#listStudents" text="Liste" />
+            </items>
+          </Menu>
+          <Menu fx:id="menu3" mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="aboutmenu" mnemonicParsing="false" onAction="#about" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TableView fx:id="table" layoutX="23.0" layoutY="46.0" onMouseClicked="#infoStudent" prefHeight="536.0" prefWidth="861.0">
+        <columns>
+          <TableColumn fx:id="idStudentColumn" prefWidth="161.0" text="ID" />
+          <TableColumn fx:id="nomColumn" prefWidth="201.0" text="Nom" />
+            <TableColumn fx:id="prenomColumn" prefWidth="257.0" text="Prénom" />
+            <TableColumn fx:id="dateColumn" prefWidth="241.0" text="Date de naissance" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

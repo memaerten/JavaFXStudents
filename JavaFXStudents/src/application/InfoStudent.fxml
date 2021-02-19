@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InfoStudentController">
+   <children>
+      <MenuBar fx:id="menubar" layoutY="-2.0" prefHeight="32.0" prefWidth="900.0">
+        <menus>
+          <Menu fx:id="menu1" mnemonicParsing="false" text="Fichier">
+            <items>
+              <MenuItem fx:id="menu11" mnemonicParsing="false" onAction="#menuclose" text="Fermer" />
+            </items>
+          </Menu>
+          <Menu fx:id="menu2" mnemonicParsing="false" text="Etudiants">
+            <items>
+              <MenuItem fx:id="addmenu" mnemonicParsing="false" onAction="#addStudent" text="Ajouter">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Downloads/add-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="listmenu" mnemonicParsing="false" onAction="#listStudents" text="Liste" />
+            </items>
+          </Menu>
+          <Menu fx:id="menu3" mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="aboutmenu" mnemonicParsing="false" onAction="#about" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextField fx:id="nomTextField" layoutX="206.0" layoutY="147.0" prefHeight="31.0" prefWidth="218.0" />
+      <Label layoutX="111.0" layoutY="104.0" text="Informations">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="148.0" layoutY="152.0" text="Nom" />
+      <Label layoutX="131.0" layoutY="201.0" text="Prénom" />
+      <TextField fx:id="prenomTextField" layoutX="206.0" layoutY="196.0" prefHeight="31.0" prefWidth="218.0" />
+      <Label layoutX="72.0" layoutY="253.0" text="Date de naissance" />
+      <DatePicker fx:id="dateDeNaissance" layoutX="206.0" layoutY="248.0" />
+      <Button fx:id="modify" layoutX="283.0" layoutY="418.0" mnemonicParsing="false" onAction="#modifyStudent" text="Modifier" />
+      <Label layoutX="612.0" layoutY="112.0" text="Photo" />
+      <ImageView fitHeight="197.0" fitWidth="200.0" layoutX="552.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="photolabel" layoutX="145.0" layoutY="300.0" text="Photo" />
+      <TextField fx:id="phototextfield" layoutX="206.0" layoutY="295.0" />
+      <Button fx:id="photobutton" layoutX="392.0" layoutY="295.0" mnemonicParsing="false" onAction="#fileChoose" text="Parcourir..." />
+      <Button fx:id="update" layoutX="387.0" layoutY="418.0" mnemonicParsing="false" onAction="#updateStudent" text="Enregistrer" />
+   </children>
+</AnchorPane>
