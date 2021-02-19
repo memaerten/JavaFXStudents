@@ -21,7 +21,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../Downloads/add-icon.png" />
+                              <Image url="@../add-icon.png" />
                            </image>
                         </ImageView>
                      </graphic></MenuItem>
